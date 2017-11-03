@@ -1,0 +1,19 @@
+{
+  "name": "jj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.19"
+  }
+}
