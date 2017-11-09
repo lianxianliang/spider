@@ -32,8 +32,8 @@ fs.readFile('./code.json', 'utf-8', function(err, data) {
 
 			request(
 				code,
-				"http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code=" + code + "&page=" + i + "&per=20&sdate=&edate=&rt=0.49898949847864604",
-				'{type: lsjz,code: ' + code + ',page: ' + i + ',per: 20,sdate: "",edate: "",rt: 0.49898949847864604}',
+				"http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code=" + code + "&page=" + i + "&per=10000&sdate=&edate=&rt=0.49898949847864604",
+				'{type: lsjz,code: ' + code + ',page: ' + i + ',per: 10000,sdate: "",edate: "",rt: 0.49898949847864604}',
 				function(chunks) {
 					var xml = chunks.slice(chunks.indexOf("<table"), chunks.indexOf("</table>") + 8);
 
