@@ -2,17 +2,60 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8" />
 		<title></title>
+
+		<style type="text/css">
+			div b {
+				color: #1200ff;
+			}
+			
+			div b.up {
+				color: #f00;
+			}
+			
+			div b.down {
+				color: #1fb51f;
+			}
+			
+			.myChartBox {
+				width: calc(100% - 10px);
+				height: 540px;
+			}
+			
+			#getUse,
+			#back {
+				width: 80px;
+				height: 80px;
+				background: transparent;
+				position: fixed;
+				top: 3%;
+				right: 3%;
+				font-size: 28px;
+				text-align: center;
+				cursor: pointer;
+				z-index: 999;
+				color: rgba(0, 0, 0, 0.3);
+			}
+			
+			#back {
+				margin-top: 100px;
+			}
+			
+			#getUse:hover,
+			#back:hover {
+				background: #000;
+				color: #ededed;
+			}
+		</style>
 	</head>
 
 	<body>
-
-		<div id="Box">
-
-		</div>
+		<div id="getUse">获取可用</div>
+		<div id="back">显示全部</div>
 		<script src="plugin/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
-		<script src="analyze/getTop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="analyze/analyzeTop.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>

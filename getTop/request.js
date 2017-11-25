@@ -10,7 +10,7 @@ const cheerio = require("cheerio");
 var iconv = require("iconv-lite");
 var parseString = require('xml2js').parseString;
 
-function request(path, param, callback) {
+function request(code, path, param, callback) {
 	var options = {
 		hostname: 'fund.eastmoney.com',
 		port: 80, //端口号 https默认端口 443， http默认的端口号是80  
@@ -22,7 +22,7 @@ function request(path, param, callback) {
 			"Accept-Language": "zh-CN,zh;q=0.9",
 			"Connection": "keep-alive",
 			"Host": "fund.eastmoney.com",
-			"Referer": "http://fund.eastmoney.com/data/fbsfundranking.html",
+			"Referer": "http://fund.eastmoney.com/f10/jjjz_" + code + ".html",
 			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36",
 		} //伪造请求头  
 	};
@@ -42,8 +42,8 @@ function request(path, param, callback) {
 	})
 
 	req.on("error", function(err) {
-		console.log('请求出错了,接着爬');
-		request(path, param, callback)
+		console.log('请求出错了,接着爬  ' + code);
+		request(code, path, param, callback)
 	})
 	//这是前台参数的一个样式，这里的参数param由后台的路由模块传过来，而后台的路由模块参数是前台传来的  
 	//    var obj = {  
